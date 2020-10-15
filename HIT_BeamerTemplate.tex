@@ -9,6 +9,7 @@
 \usepackage{color}			 %字体颜色支持
 \usepackage{graphicx,hyperref,url}
 \usepackage{metalogo}	% 非必须
+\usepackage{color}
 %% 上文引用的包可按实际情况自行增删
 %%%%%%%%%%%%%%%%%%	
 
@@ -22,15 +23,15 @@
 %%%%%%%%%%%%%%%%%%%%%
 
 %%%%----首页信息设置----%%%%
-\title[ 开关电源设计实践与创新课程报告]{开关电源设计实践与创新结题报告}
-\subtitle{——用于高降压比的DC/DC交错式串联电容抽头降压转换器}			
+\title[开关电源设计开发实践与创新思维课程报告]{开关电源设计开发实践与创新思维课程报告}
+\subtitle{——交错串联电容分接Buck降压电路 \ ISC-TaB}			
 %%%%----标题设置
 
 
-\author[Name]{
-  蒋佳诚 \ 王浩瑞 \ 曹广旭 \\\medskip
-  {\small \url{}} \\
-  {\small \url{}}}
+\author[W.J.C]{
+  王浩瑞 \ 蒋佳诚 \ 曹广旭 \\\medskip
+  {\small \url{1180610825@stu.hit.edu.cn}} \\
+  {\small \url{url}}}
 %%%%----个人信息设置
   
 \institute[IOPP]{
@@ -38,7 +39,7 @@
   }
 %%%%----机构信息
 
-\date[Nov. 11 2020]{
+\date[Oct. 20 2020]{
   2020年10月20日}
 %%%%----日期信息
   
@@ -54,29 +55,28 @@
 \tableofcontents
 \end{frame}				%生成提纲页
 
-\section{研究背景及意义}
+\section{背景}
 \begin{frame}
-  \frametitle{研究背景及意义}
+  \frametitle{背景}
 
   \begin{itemize}
-    \item {编译方式}
+    \item 通讯、工业系统用电需要做到高低压隔离
 	    \begin{itemize}
-	    	\item  推荐安装完整版的 TeXLive
-	    	\item 使用 \XeLaTeX 编译
-	    \end{itemize}
-    \item 请参考 \LaTeX 和 Beamer 用户文档 
-    
-    \item 行内数学公式示例 $\sin^2 \theta + \cos^2 \theta = 1$
-    \item {行间数学公式示例 \begin{equation}
-	    y_{1}=\int \sin x\, {\rm d}x
-    \end{equation}	 }   
-    \item 基于“华大绿”颜色 \url{http://www.ccnu.edu.cn/}
+	    	\item DC/DC变换器
+	    	\item 如何实现高降压比?
+	    \end{itemize} 
+	\item Buck电路及其拓扑
+	 \begin{itemize}
+		\item SC-Buck
+		\item Buck-Boost
+		\item \textcolor{red}{ISC-Buck}
+	\end{itemize} 
   \end{itemize}
 \end{frame}
 
-\section{研究现状及分析}
+\section{参考电路图}
 \begin{frame}
-  \frametitle{内置环境}
+  \frametitle{参考电路图}
 	\begin{block}{Slides with \LaTeX}
 	    Beamer offers a lot of functions to create nice slides using \LaTeX.
 	  \end{block}
@@ -93,7 +93,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{带数字列表}
+  \frametitle{仿真电路图}
 	 \begin{enumerate}
 	    \item This just shows the effect of the style
 	    \item It is not a Beamer tutorial
@@ -102,9 +102,9 @@
 	  \end{enumerate}
 \end{frame}
 
-\section{改进思路及方法}
+\section{电路原理}
 \begin{frame}
-  \frametitle{结论}
+  \frametitle{电路原理}
 
   \begin{itemize}
     \item Easy to use
@@ -112,9 +112,9 @@
   \end{itemize}
 \end{frame}
 
-\section{仿真结构展示}
+\section{仿真结果}
 \begin{frame}
-  \frametitle{结论}
+  \frametitle{仿真结果}
 
   \begin{itemize}
     \item Easy to use
@@ -122,9 +122,9 @@
   \end{itemize}
 \end{frame}
 
-\section{研究总结与思考}
+\section{结论/思考}
 \begin{frame}
-  \frametitle{结论}
+  \frametitle{结论/思考}
 
   \begin{itemize}
     \item Easy to use

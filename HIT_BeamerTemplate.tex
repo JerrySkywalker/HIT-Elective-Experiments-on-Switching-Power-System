@@ -74,32 +74,48 @@
   \end{itemize}
 \end{frame}
 
-\section{参考电路图}
 \begin{frame}
-  \frametitle{参考电路图}
-	\begin{block}{Slides with \LaTeX}
-	    Beamer offers a lot of functions to create nice slides using \LaTeX.
-	  \end{block}
-	
-	  \begin{block}{The basis}
-	    内部使用以下主题
-	    \begin{itemize}
-	      \item split
-	      \item whale
-	      \item rounded
-	      \item orchid
-	    \end{itemize}
-	  \end{block}
+	\frametitle{参考电路图}
+	\begin{columns}[T] % align columns
+		\begin{column}<0->{.70\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/circuit diagram1.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{参考电路图}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+    \begin{column}<0->{.70\textwidth}
+			\begin{itemize}
+        \item 123456
+      \end{itemize}
+    \end{column}%
+	\end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{仿真电路图}
-	 \begin{enumerate}
-	    \item This just shows the effect of the style
-	    \item It is not a Beamer tutorial
-	    \item Read the Beamer manual for more help
-	    \item Contact me only concerning the style file
-	  \end{enumerate}
+  \begin{columns}[T] % align columns
+		\begin{column}<0->{.70\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/PSIM-circuit diagram1.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{参考电路图}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+    \begin{column}<0->{.70\textwidth}
+			\begin{itemize}
+        \item 123456
+      \end{itemize}
+    \end{column}%
+	\end{columns}
 \end{frame}
 
 \section{电路原理}
@@ -143,22 +159,7 @@ Phys.\ Lett.\ A {\bf xx}, 2xx (20xx)
 \end{thebibliography}
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{HITSIC \_ Modules架构图}
-% 	\begin{columns}[T] % align columns
-% 		\begin{column}<0->{.70\textwidth}
-% 			\begin{figure}[thpb]
-% 				\centering
-% 				\resizebox{1\linewidth}{!}{
-% 					\includegraphics{figures/HITSIC-Modules_Layers.png}
-% 				}
-% 				%\includegraphics[scale=1.0]{figurefile}
-% 				\caption{HITSIC \_ Modules架构图}
-% 				\label{fig:campus}
-% 			\end{figure}
-% 		\end{column}%
-% 	\end{columns}
-% \end{frame}
+
 
 
 \end{document}

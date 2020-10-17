@@ -28,8 +28,8 @@
 %%%%----标题设置
 
 
-\author[W.J.C]{
-  王浩瑞 \ 蒋佳诚 \ 曹广旭 }
+\author[Wang.Jiang.Cao]{
+  第四组:王浩瑞 \ 蒋佳诚 \ 曹广旭 }
 %%%%----个人信息设置
   
 \institute[IOPP]{
@@ -75,6 +75,7 @@
   \end{itemize}
 \end{frame}
 
+\section{参考电路图}
 \begin{frame}
 	\frametitle{参考电路图}
 	\begin{columns}[T] % align columns
@@ -100,6 +101,7 @@
 	\end{columns}
 \end{frame}
 
+\section{仿真电路图}
 \begin{frame}
   \frametitle{仿真电路图}
   \begin{columns}[T] % align columns
@@ -114,7 +116,6 @@
 				\label{fig:campus}
 			\end{figure}
     \end{column}%
-    
     \begin{column}<0->{.40\textwidth}
 			\begin{itemize}
         \item 注意MOS1-MOS6的开关顺序和相位
@@ -125,13 +126,148 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}
+  \frametitle{仿真电路图}
+  \begin{columns}[T] % align columns
+		\begin{column}<0->{.70\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/parameter_table figure.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{元件参数表}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+	\end{columns}
+\end{frame}
+
 \section{电路原理}
 \begin{frame}
   \frametitle{电路原理}
+  \begin{columns}[T] % align columns
+		\begin{column}<0->{.30\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/current actual direction in t0-t3.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{电流流向(开态)}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+    \begin{column}<0->{.30\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/current value in t0-t2.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{电流大小关系(开态)}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+	\end{columns}
+\end{frame}
 
+\begin{frame}
+  \frametitle{电路原理}
+  \begin{columns}[T] % align columns
+		\begin{column}<0->{.70\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/current value in t0-t2.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{电流大小关系(开态)}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+    \begin{column}<0->{.40\textwidth}
+			\begin{itemize}
+        \item paper中的公式1
+      \end{itemize}
+    \end{column}%
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{电路原理}
+  \begin{columns}[T] % align columns
+		\begin{column}<0->{.30\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/current actual direction in t3-t0.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{电流流向(关态)}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+    \begin{column}<0->{.30\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/current value in t3-t5.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{电流大小关系(关态)}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{电路原理}
+  \begin{columns}[T] % align columns
+		\begin{column}<0->{.70\textwidth}
+			\begin{figure}[thpb]
+				\centering
+				\resizebox{1\linewidth}{!}{
+					\includegraphics{figure/current value in t3-t5.png}
+				}
+				%\includegraphics[scale=1.0]{figurefile}
+				\caption{电流大小关系(关态)}
+				\label{fig:campus}
+			\end{figure}
+    \end{column}%
+    \begin{column}<0->{.40\textwidth}
+			\begin{itemize}
+        \item paper中的公式2
+      \end{itemize}
+    \end{column}%
+  \end{columns}
+\end{frame}
+
+\section{降压比计算}
+\begin{frame}
+  \frametitle{降压比计算}
   \begin{itemize}
-    \item Easy to use
-    \item Good results
+    \item 谐振电感电压$V_{L_{r2}}$
+      \begin{itemize}
+        \item paper中的公式3
+      \end{itemize}
+    \item 变压器励磁电感电压$V_{L_{m}}$
+      \begin{itemize}
+        \item paper中的公式4
+      \end{itemize}
+    \item 伏秒平衡(开态)
+	    \begin{itemize}
+	    	\item paper中的公式5
+	    \end{itemize} 
+	  \item 伏秒平衡(关态)
+	    \begin{itemize}
+		    \item paper中的公式6
+      \end{itemize} 
+    \item 降压比
+      \begin{itemize}
+        \item paper中的公式7
+      \end{itemize}
   \end{itemize}
 \end{frame}
 

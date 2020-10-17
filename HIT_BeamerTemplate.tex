@@ -29,9 +29,7 @@
 
 
 \author[W.J.C]{
-  王浩瑞 \ 蒋佳诚 \ 曹广旭 \\\medskip
-  {\small \url{1180610825@stu.hit.edu.cn}} \\
-  {\small \url{url}}}
+  王浩瑞 \ 蒋佳诚 \ 曹广旭 }
 %%%%----个人信息设置
   
 \institute[IOPP]{
@@ -70,6 +68,9 @@
 		\item SC-Buck
 		\item Buck-Boost
 		\item \textcolor{red}{ISC-Buck}
+      \begin{itemize}
+        \item 提出ISC-Buck拓扑结构实现48V-3.3V降压
+      \end{itemize}
 	\end{itemize} 
   \end{itemize}
 \end{frame}
@@ -88,9 +89,12 @@
 				\label{fig:campus}
 			\end{figure}
     \end{column}%
-    \begin{column}<0->{.70\textwidth}
+    \begin{column}<0->{.40\textwidth}
 			\begin{itemize}
-        \item 123456
+        \item 使用了六个开关管 \ MOS1-MOS6 \ \textcolor{red}{D倍降压}
+        \item 电路拓扑结构具有\textcolor{red}{对称性} \ phaseA,phaseB \ \textcolor{red}{两倍降压}
+        \item 使用了变压器降压 \ \textcolor{red}{n:1倍降压}
+        \item  LLC软开关
       \end{itemize}
     \end{column}%
 	\end{columns}
@@ -106,13 +110,16 @@
 					\includegraphics{figure/PSIM-circuit diagram1.png}
 				}
 				%\includegraphics[scale=1.0]{figurefile}
-				\caption{参考电路图}
+				\caption{仿真电路图}
 				\label{fig:campus}
 			\end{figure}
     \end{column}%
-    \begin{column}<0->{.70\textwidth}
+    
+    \begin{column}<0->{.40\textwidth}
 			\begin{itemize}
-        \item 123456
+        \item 注意MOS1-MOS6的开关顺序和相位
+        \item 注意$L_r$和$L_m$的选用
+        \item 输出选用大容值电容
       \end{itemize}
     \end{column}%
 	\end{columns}
@@ -121,16 +128,6 @@
 \section{电路原理}
 \begin{frame}
   \frametitle{电路原理}
-
-  \begin{itemize}
-    \item Easy to use
-    \item Good results
-  \end{itemize}
-\end{frame}
-
-\section{仿真结果}
-\begin{frame}
-  \frametitle{仿真结果}
 
   \begin{itemize}
     \item Easy to use
@@ -151,10 +148,8 @@
 \section{参考文献}
 \begin{frame}{参考文献}
 \begin{thebibliography}{99} 
-\bibitem{zhao1} Yi~Zhao, {\sl An introduction to X}, Sep.~15, 2015
-\bibitem{qian2} Er~Qian, San~Sun, 
-Phys.\ Lett.\ A {\bf xx}, 2xx (20xx)   
-\bibitem{li4} Si~Li, Phys.\ Rev.\ C {\bf xx}, 5xx (20xx) 
+\bibitem{zhao1} Lanhua~Zhang,Sombuddha~Chakraborty {\sl An \ Interleaved \ Series-Capacitor \ Tapped \ Buck \ Converter \ for \ High
+Step-Down \ DC/DC \ Application}, VOL.34,JULY,2019,IEEE \ TRANSACTIONS \ ON \ POWER ELECTRONICS
 
 \end{thebibliography}
 \end{frame}

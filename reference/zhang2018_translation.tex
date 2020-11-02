@@ -1,30 +1,11 @@
-% !Mode:: "TeX:UTF-8"
+\documentclass[12pt,a4paper]{report}
+\usepackage{graphicx}
+\usepackage{ctex}
+\usepackage{indentfirst}
 \graphicspath{{chapter/}{figures/}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 封面部分
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{titlepage}
-	\centering
-	\includegraphics[width=0.2\textwidth]{sf1.png}\par
-	\vspace{1cm}
-	\includegraphics[width=0.8\textwidth]{sf.jpg}\par
-	\vspace{0.1cm}
-	{\scshape\LARGE Harbin Institute of Technology \par}
-	\vspace{1cm}
-	{\kaishu\LARGE 开关电源设计开发实践与创新思维课程报告\par}
-	\vspace{1.5cm}
-	{\huge\bfseries 交错串联电容分接Buck降压电路ISC-TaB\par}
-	\vspace{2cm}
-	{\fangsong\Large\itshape 蒋佳诚\par}
-	\vfill
-	{1180610825}\par
-	\fangsong{电气工程及自动化系}
-	\vfill
-	指导教师	\textsc{管乐诗}
-	\vfill
-% Bottom of the page
-	{\large \today\par}
-\end{titlepage}
+\usepackage{CJK}
+\begin{document}
+
 
 \chapter{研究背景及意义}
 高降压比DC/DC变换器在工业、汽车、电信领域得到广泛应用。随着数据中心和云计算的不断发展，对电能传输的效率等指标提出了更高要求。在数据中心领域，流行的降压比为60V/48V/24V到5V/3.3V/1.8V。
@@ -101,120 +82,57 @@ SC-TaB和2ph-SC的主要优点是实现了所有开关管的ZVS，提高了转�
     \caption{ISC-TaB}
 \end{figure}
 电路采用了六个开关管，电容$C_1$将电路的两相分离。
-\section{电路参数}
-记小球直径为D，1号球由$h-2/d$高度处释放，则高度差为h。由动能定理，
-\begin{equation}
-	\frac{1}{2}  m_{1} v_{1}^{2} - 0 = m_{1 }g h
-\end{equation}
-\par
-质量相等的两球发生对心正碰，有
-\begin{equation}
-	m_{1} = m_{2}
-\end{equation}
-\begin{equation}
-	m_{1} v_{1} = m_{2} v_{2}
-\end{equation}
-\par
-2号球做平抛运动，其距地高度为$H$,平抛距离为$R$，有
-\begin{equation}
-	H = \frac{1}{2} g t^{2}
-\end{equation}
-\begin{equation}
-	R_{theory} = v_{2} t
-\end{equation}
-\par 
-联立以上方程，解得$R-h$关系
-\begin{equation}
-	R_{theory} (h) = 2 \sqrt{Hh}
-\end{equation}
-\par
-实验测得2号球距地高度$15.6cm$，代入得到一个一次函数关系
-\begin{equation}
-	R_{theory} (h) = 2 \sqrt{15.6 h}
-\end{equation}
 
-\subsection{实验值}
-在实验中，对h每隔1cm进行5次重复实验，并取平均值得到$R_{average}$。同时假设发生对心正碰后的小球1静止，由2.1.1得到$v_{1}$，$v_{2}$:
-\begin{equation}
-	v_{1} = \sqrt{2gh}
-\end{equation}
-\begin{equation}
-	v_{2} = R \sqrt{\frac{g}{2H}}
-\end{equation}
-
-分别求同一$h$处的$v_{1}$，$v_{2}$，并将其平均值记录到下表中。取$g = 9.8 m/s^{2}$
-
-
-\begin{longtable}{ccccc}%
-	\caption{\wuhao 实验数据处理}\\[0.3em]
-	\toprule[1.5pt] 下落高度h(cm) & $R_{average}$(cm) & $R_{theory}(cm) $ & $v_{1,average}$(m/s) & $v_{2,average}$ (m/s) \\ \midrule[1pt]
-	\endfirsthead
-	\multicolumn{3}{r}{表~\thetable（续表）}\vspace{0.5em}\\
-	\toprule[1.5pt] 下落高度h(cm) & $R_{average}$(cm) & $R_{theory}(cm) $ & $v_{1,average}$(m/s) & $v_{2,average}$ (m/s) \\ \midrule[1pt]
-	\endhead
-	\bottomrule[1.5pt]
-	\endfoot
-    3.00  & 12.90  & 13.68  & 0.77  & 0.72  \\
-    4.00  & 13.96  & 15.80  & 0.89  & 0.78  \\
-    5.00  & 15.48  & 17.66  & 0.99  & 0.87  \\
-    6.00  & 17.26  & 19.35  & 1.08  & 0.97  \\
-    7.00  & 18.88  & 20.90  & 1.17  & 1.06  \\
-    8.00  & 20.48  & 22.34  & 1.25  & 1.15  \\
-    9.00  & 21.50  & 23.70  & 1.33  & 1.20  \\
-    10.00  & 24.28  & 24.98  & 1.40  & 1.36  \\
-    11.00  & 25.66  & 26.20  & 1.47  & 1.44  \\
-    12.00  & 26.70  & 27.36  & 1.53  & 1.50  \\
-    13.00  & 27.98  & 28.48  & 1.60  & 1.57  \\
-    14.00  & 28.10  & 29.56  & 1.66  & 1.57  \\
-\end{longtable}\normalsize
-
-\par
-给出拟合曲线图：
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{01}
-    \caption{实验曲线与理论曲线}
-\end{figure}
-
-实验值拟合曲线为
-\begin{equation}
-	R_{Experiment} (h) = 1.62 h + 5.80
-\end{equation}
-
-可见，$R = 16.00$时，$h = 6.29$;
-$R = 22.00$时，$h = 10.00$
-
-
-\subsection{恢复系数}
-
-假设碰撞后小球1无动能，则碰撞前速度差即为$v_{1}$,，碰撞后速度差即为$v_{2}$。由最小二乘法公式
-\begin{equation}
-	c=\frac{\overline{v_{1}v_{2}}-\bar{v_{1}}  \bar{v_{2}}}{\overline{v_{1}^{2}}-(\bar{v_{1}})^{2}}
-\end{equation}
-
-得到 $c = 0.98$
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{02}
-    \caption{恢复系数}
-\end{figure}
-
-\chapter{仿真电路波形}
-\section{$h$误差产生原因}
-	装置摆放不水平，摆绳与球连接处的弯角附加的距离，人估读误差等。
-
-\section{传递能量比与质量比之间的关系}
-	由定义，传递能量比为:
-\begin{equation}
-	\epsilon = \frac{e}{E}\\
-			 = \frac{\frac{1}{2}m_{2} v_{2}^{2}}{\frac{1}{2}m_{1} v_{1}^{2}} 
-\end{equation}
+\chapter{分析}
+\section{电压转换率}
+为了简化分析，使用$V_{cr2}$来表示开关周期内$C_{r2}$上的平均电压。
+$T_s$是开关周期,$DT_s$表示从t0到t3的时间。
+根据（1），在$[t0,t3]$期间，$L_{r2}$两端的平均电压为:
 
 \begin{equation}
-	\epsilon = \frac{1}{\mu} \frac{v_{2}^{2}}{v_{1}^{2}} 
+    V_{\mathrm{Lr} 2}=\frac{\frac{V_{\mathrm{in}}}{2}-V_{o}-V_{\mathrm{Cr} 2}}{1+\frac{L_{m}}{L_{r 2}} \cdot \frac{(n+1)^{2}}{n^{2}}}
 \end{equation}
 
-\chapter{研究总结及思考}
+根据图7所示的电流关系，$L_m$上的电压在$[t0,t3]$期间为：
+
+\begin{equation}
+    V_{\mathrm{Lm}}=\frac{L_{m}}{L_{r 2}} \cdot\left(1+\frac{1}{n}\right) \cdot V_{\mathrm{Lr} 2}
+\end{equation}
+
+考虑到公式1和公式2，$L_{r2}$上的伏秒平衡关系为：
+
+\begin{equation}
+    V_{\mathrm{Lr} 2} \cdot D+\left(-V_{\mathrm{Cr} 2}+n V_{o}\right) \cdot(1-D)=0
+\end{equation}
+
+$L_{m}$上的伏秒平衡关系也可写为为：
+
+\begin{equation}
+    V_{\mathrm{Lm}} \cdot D+(1-D)\left(-n V_{o}\right)=0
+\end{equation}
+
+考虑公式(3)到(6)，并假设$L_{r 1}=L_{r 2}=L_{r}$，则ISC-TaB电路的电压转换比为：
+
+\begin{equation}
+    \frac{V_{o}}{V_{\mathrm{in}}}=\frac{D}{2 \cdot\left(n+1+\frac{L_{r}}{L_{m}} \cdot \frac{n^{2}}{n+1}\right)}
+\end{equation}
+
+Buck，SC-Buck，SC-TaB和ISC-TaB的电压转换关系图已经绘制在图9中。如（7）和图9所示，
+建议的ISC-TaB转换器的转换比为SC-TaB的一半。 如前所述，当前提出的的ISC-TaB是一种适用于高降压DC/DC应用的拓扑。
+
+\section{波形推到}
+
+S1和S4的电流波形可以基于电压转换器的输入给出。 $iS4$的派生变形将在本节中以示例的方式给出。 $P_{in}$代表当前变压器的总输入功率。 $I_{S4-avg}$则是 $I_{S4}$的平均值：
+
+\begin{equation}
+    I_{S4_{avg}} = \frac{P_{in}/2}{V_{in}/2}
+\end{equation}
+
+为了获得$i_{S4}$的最小值，$L_{r2}$的电流在$[t0,t3]$假设是线性的。那么$i_{S4}$的最小值可由以下关系推导
+
+\begin{equation}
+    i_{S4_{min}} =I_{S4_{avg}}-\frac{D T_{s}}{2} \cdot \frac{V_{\mathrm{Lr} 2}}{L_{r}}
+\end{equation}
 
 \end{document}
 

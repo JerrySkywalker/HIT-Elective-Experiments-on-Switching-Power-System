@@ -10,21 +10,20 @@
 
 \chapter{研究背景及意义}
 高降压比DC/DC变换器在工业、汽车、电信领域得到广泛应用。随着数据中心和云计算的不断发展，对电能传输的效率等指标提出了更高要求。在数据中心领域，流行的降压比为60V/48V/24V到5V/3.3V/1.8V。
-
-
+\chapter{研究现状及分析}
 Buck电路是一种典型的DC/DC拓扑结构。Buck电路结构简单，实现成本低，在电力电子与工业领域应用广泛。但是，对于一个二级Buck电路，要提高降压比，需要MOS管承受窄导通时间带来的大电流，这就在材料上对功率开关提出了极高要求。同时，高降压比所需要的极低占空比需要更高效的PWM，实际实施困难。这些因素限制了二级Buck电路的应用。
 
 
-串联电容Buck电路(Series-capacitor Buck,SC-Buck)把开关电容和多相Buck结合到一起，形成一种新的Buck电路的拓扑结构。与传统的Buck电路相比，SC-Buck规模更小，效率更高，具有电流自平衡功能。如图1-1所示，两个电感交错放置于电路中，消除输出电容$C_o$上的电流纹波，同时还能分别减小两个电感的尺寸。图1-2表明，分到每条支路上的电压只有输入电压的一半。
+串联电容Buck电路(Series-capacitor Buck,SC-Buck)把开关电容和多相Buck结合到一起，形成一种新的Buck电路的拓扑结构。与传统的Buck电路相比，SC-Buck规模更小，效率更高，具有电流自平衡功能。如图2.1所示，两个电感交错放置于电路中，消除输出电容$C_o$上的电流纹波，同时还能分别减小两个电感的尺寸。图2.2表明，分到每条支路上的电压只有输入电压的一半。
 
 
 实现高降压比的另一个趋势是使用磁性元件。实现方法有带倍流整流的全桥变换器(full-bridge converter with current-doubler rectifier),LLC,Sigma变换器和分接电感Buck变换器(tapped inductor Buck converter)等。在轻载时，全桥变换器无法实现所有主开关管的零电压开关(Zero-voltage Switching)，导致轻载时转换效率下降，而且输出端的大电感会影响功率密度。在谐振频率下，LLC具有较高效率，但是系统不在谐振频率时的动态效率很低。为了解决这个问题，提出了将LLC和Buck结合的Sigma变换器。LLC负责谐振频率下的高效功率传输，Buck变换器负责瞬态响应。但是，由于LLC变换器在稳态时处理大部分的功率，Buck变换器在过渡时处理大部分的功率，因此LLC变换器和Buck变换器都必须设计成能够处理整个系统的功率。如此的并行结构将增大控制的复杂度。
 
 
-Tapped inductor Buck转换器最初用于处理高降压比功率转换电路。然而，交错电感的漏感与开关电容产生共振，产生额外的电压环。基于混合变压器的Buck变换器（Hybrid-transformer-based Buck,HTB）增加了一个开关（S3）和一个电感，以获得软开关操作和较低的电压环，如图1-3所示。利用交错电感的漏感作为谐振电感，交错串联电容Buck（Series-capacitor tapped Buck,SC-TaB）变换器如图1-4所示。SC-TaB中的开关管$S_3$可以直接连接负载，也可以直接接地，另一种SC-TaB电路如图1-5所示。后者的两相交错配置的电路图如图1-6所示。开关管接地可以让控制更为简单。
+Tapped inductor Buck转换器最初用于处理高降压比功率转换电路。然而，交错电感的漏感与开关电容产生共振，产生额外的电压环。基于混合变压器的Buck变换器（Hybrid-transformer-based Buck,HTB）增加了一个开关（S3）和一个电感，以获得软开关操作和较低的电压环，如图2.3所示。利用交错电感的漏感作为谐振电感，交错串联电容Buck（Series-capacitor tapped Buck,SC-TaB）变换器如图2.4所示。SC-TaB中的开关管$S_3$可以直接连接负载，也可以直接接地，另一种SC-TaB电路如图2.5所示。后者的两相交错配置的电路图如图2.6所示。开关管接地可以让控制更为简单。
 
 
-SC-TaB和2ph-SC的主要优点是实现了所有开关管的ZVS，提高了转换效率。然而，随着降压比的增大，耦合电感的匝数比也随之增大，高匝数比会给耦合电感带来更多的应力，影响转换效率。为了克服这一缺点，并考虑到SC-Buck具有倍增降压比的能力，通过引入电容$C_1$，提出了一种新的变换器拓扑，如图1-7所示。新拓扑结构被称为交错串联电容分接Buck变换器（ISC-TaB）。该转换器将SC-Buck和SC-TaB的优点结合到一起。与传统的SC-TaB相比，它的降压比提高了一倍，使得该变换器更适合用于高降压比场合。
+SC-TaB和2ph-SC的主要优点是实现了所有开关管的ZVS，提高了转换效率。然而，随着降压比的增大，耦合电感的匝数比也随之增大，高匝数比会给耦合电感带来更多的应力，影响转换效率。为了克服这一缺点，并考虑到SC-Buck具有倍增降压比的能力，通过引入电容$C_1$，提出了一种新的变换器拓扑，如图2.7所示。新拓扑结构被称为交错串联电容分接Buck变换器（ISC-TaB）。该转换器将SC-Buck和SC-TaB的优点结合到一起。与传统的SC-TaB相比，它的降压比提高了一倍，使得该变换器更适合用于高降压比场合。
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.8\textwidth]{figures/SC-Buck.png}
@@ -60,29 +59,6 @@ SC-TaB和2ph-SC的主要优点是实现了所有开关管的ZVS，提高了转�
     \includegraphics[width = 0.8\textwidth]{figures/circuit diagram1.png}
     \caption{ISC-TaB}
 \end{figure}
-\chapter{电路分析}
-\section{电路结构}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{figures/SC-TaB.png}
-    \caption{SC-TaB}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{figures/2ph SC-TaB.png}
-    \caption{2ph SC-TaB}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{figures/circuit diagram1.png}
-    \caption{ISC-TaB}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{figures/circuit diagram1.png}
-    \caption{ISC-TaB}
-\end{figure}
-电路采用了六个开关管，电容$C_1$将电路的两相分离。
 
 \chapter{分析}
 \section{电压转换率}
@@ -223,8 +199,55 @@ $v_{Cr0}$的值可以在Mathcad中求解。
     \includegraphics[width = 0.8\textwidth]{figures/table_summary.png}
     \caption{SC-TaB}
 \end{figure}
+\chapter{仿真电路及波形截图}
+\section{仿真电路}
+利用PSIM软件进行电路的仿真，参照的仿真所用的参数如图3.1所示，仿真电路图如图3.2所示。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/parameter_table figure.png}
+    \caption{元件参数表}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/PSIM-circuit diagram1.png}
+    \caption{仿真电路图}
+\end{figure}
 
-\chapter{结论}
+实验部分波形的仿真图像如图3.3--3.7所示
+
+输出电压稳态幅值为3.32V，误差为$0.6\%$。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/sim_v_out.png}
+    \caption{输出电压波形}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/sim_is1,is4.png}
+    \caption{$I_{S_1},I_{S_4}$波形}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/sim_is2,is5.png}
+    \caption{$I_{S_2},I_{S_5}$波形}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/sim_is3,is6.png}
+    \caption{$I_{S_3},I_{S_6}$波形}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/sim_ilr1,ilr2.png}
+    \caption{$I_{L_r1},I_{L_r2}$波形}
+\end{figure}
+
+\chapter{研究结论与思考}
 
 本文介绍了高降压DC / DC转换器的拓扑，讨论并提出了一种新的转换器拓扑ISC-TaB转换器，并进行了分析和验证。本文的主要功能包括：
 
@@ -233,8 +256,6 @@ $v_{Cr0}$的值可以在Mathcad中求解。
 2）分析了ISC-TaB转换器的工作原理
 并获得所有电压和电流波形。因此，可以计算功耗以优化设计。分析了ZVS的运行，讨论了ZVS操作的设计准则。
 
-3）为了验证提议的ISC-TaB的性能，对原型硬件进行了设计和测试。
-同时，还设计了一个2ph SC-TaB转换器进行比较。根据测试结果，ISC-TaB在整个负载范围内均具有更高的效率，并且峰值效率达到了95.6％。
 
 \end{document}
 
